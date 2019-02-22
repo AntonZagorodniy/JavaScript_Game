@@ -147,7 +147,6 @@ class Level {
     const rightWall = Math.ceil(position.x + size.x);
     
     if (leftWall < 0 || rightWall > this.width || topWall < 0) {
-      
       return 'wall';
     }
 
@@ -242,11 +241,15 @@ class LevelParser {
 	}
 
 	actorFromSymbol(symb) {
-		if (symb && this.objects) return this.objects[symb];
+		if (symb && this.objects) {
+		return this.objects[symb]
+		};
 	}
 
 	obstacleFromSymbol(symb) {
-		if (!symb) return undefined;
+		if (!symb) {
+			return
+		};
 		return symbolObstacle[symb];
 	}
 
